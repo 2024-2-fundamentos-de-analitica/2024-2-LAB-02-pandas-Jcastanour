@@ -5,8 +5,21 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
+import pandas as pd
+
+def readcsv(file):
+    return pd.read_csv(file, sep='\t')
+
+def sizetabla(tabla):
+    return tabla.shape
+
 
 def pregunta_02():
+
+    tabla = readcsv("files/input/tbl0.tsv")
+    size = sizetabla(tabla)
+
+    return size[1]
     """
     ¿Cuál es la cantidad de columnas en la tabla `tbl0.tsv`?
 

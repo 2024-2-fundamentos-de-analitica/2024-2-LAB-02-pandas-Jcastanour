@@ -4,10 +4,23 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 `tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
 librerias de pandas para resolver las preguntas.
 """
+import pandas as pd
 
+def readcsv(file):
+    return pd.read_csv(file, sep='\t')
+
+def sizetabla(tabla):
+    return tabla.shape
+
+def sizeregistros(tabla):
+    return tabla.groupby('c1').size()
 
 def pregunta_08():
-    """
+     tabla = readcsv("files/input/tbl0.tsv")
+     tabla['suma'] = tabla['c0'] + tabla['c2']
+     return tabla
+
+     """
     Agregue una columna llamada `suma` con la suma de `c0` y `c2` al
     data frame que contiene el archivo `tbl0.tsv`.
 
@@ -21,4 +34,4 @@ def pregunta_08():
     38   38   E    1  1999-09-28    39
     39   39   E    5  1998-01-26    44
 
-    """
+     """
